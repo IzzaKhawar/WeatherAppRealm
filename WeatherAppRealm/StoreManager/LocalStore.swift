@@ -16,7 +16,7 @@ class LocalStore{
     internal init() { }
     func getWeatherData() -> WeatherModel? {
         self.isFetchingWeather = true
-        if let jsonURL = Bundle.main.url(forResource: "modelData2", withExtension: "json") {
+        if let jsonURL = Bundle.main.url(forResource: "modelData", withExtension: "json") {
             do {
                 let jsonData = try Data(contentsOf: jsonURL)
                 let decoder = JSONDecoder()

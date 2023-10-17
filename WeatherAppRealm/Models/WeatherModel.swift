@@ -10,11 +10,12 @@
 import Foundation
 import SwiftUI
 
+
 struct WeatherModel : Codable {
     let cod : String?
     let message : Int?
     let cnt : Int?
-    let list : [List]?
+    let list : [Lists]?
     let city : City?
     var hourlyWeather: [HourlyWeather] {
         return list?.map { item in
@@ -95,7 +96,7 @@ struct WeatherModel : Codable {
         cod = try values.decodeIfPresent(String.self, forKey: .cod)
         message = try values.decodeIfPresent(Int.self, forKey: .message)
         cnt = try values.decodeIfPresent(Int.self, forKey: .cnt)
-        list = try values.decodeIfPresent([List].self, forKey: .list)
+        list = try values.decodeIfPresent([Lists].self, forKey: .list)
         city = try values.decodeIfPresent(City.self, forKey: .city)
     }
     func encode(to encoder: Encoder) throws {
@@ -188,7 +189,7 @@ struct Coord : Codable {
         lon = try values.decodeIfPresent(Double.self, forKey: .lon)
     }
 }
-struct List : Codable {
+struct Lists : Codable {
     let dt : Int?
     let main : Main?
     let weather : [Weather]?

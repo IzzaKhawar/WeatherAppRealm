@@ -5,78 +5,99 @@
 //  Created by apple on 9/27/23.
 //
 import SwiftUI
+import RealmSwift
 
 struct WeatherView: View {
     @State var modelData: WeatherModel?
     @State var selectedUnits: Units?
+    @ObservedResults(FavWeather.self) var favWeathers
+
     @State private var isSaved: Bool = false
+    
     var body: some View {
         NavigationView{
-           
-                VStack (spacing: -4){
-                    if let model = modelData, let unitSelected = selectedUnits {
-                        WeatherHeader(model: model, selectedUnits: unitSelected)
-                        
-                        HourlyForecast(model: model , selectedUnits: unitSelected)
-                        
-                        DailyForecast(model: model, selectedUnits: unitSelected)
-                        
-                            .background(Color.grayish)
-                            .cornerRadius(15.0)
-                            .padding()
-                        
-                        
-                    } else {
-                        Text("Data Not Loaded")
-                            .fontWeight(.bold)
-                            .font(.headline)
-                    }
-                    
-                }
-                .frame(maxWidth: .infinity)
-                .background(
-                    LinearGradient(
-                        gradient: Gradient(colors: [Color.color, Color.liner]),
-                        startPoint: .top,
-                        endPoint: .bottom
-                    )
-                    .edgesIgnoringSafeArea([.top, .bottom])
-                )
-                .foregroundColor(.white)
             
+            VStack (spacing: -4){
+                if let model = modelData, let unitSelected = selectedUnits {
+                    WeatherHeader(model: model, selectedUnits: unitSelected)
+                    
+                    HourlyForecast(model: model , selectedUnits: unitSelected)
+                    
+                    DailyForecast(model: model, selectedUnits: unitSelected)
+                } else {
+                    Text("Data Not Loaded")
+                        .fontWeight(.bold)
+                        .font(.headline)
+                }
+                
+            }
+            .frame(maxWidth: .infinity)
+            .background(
+                LinearGradient(
+                    gradient: Gradient(colors: [Color.color, Color.gray]),
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                .edgesIgnoringSafeArea([.top, .bottom])
+            )
+            .foregroundColor(.white)
+            .onAppear {
+                isSaved = isCityInFavWeather(cityName: modelData?.city?.name)
+            }
             
             
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-
+                
                 Button {
                     if isSaved {
-                        if let id = modelData?.city?.name {
-                            isSaved = !DataManager.sharedInstance.deleteFavWeather(name: id)
-                        }
+                        if (modelData?.city?.name) != nil {
+                            for city in favWeathers{
+                                if city.city == modelData?.city?.name{
+                                    $favWeathers.remove(city)
+                                    isSaved = false
+
+                                }
+                            }
+                         }
                     } else {
-                        if let name = modelData?.city?.name {
-                            isSaved = DataManager.sharedInstance.saveFavWeather(name)
+                        if (modelData?.city?.name) != nil {
+                            let favWeather = FavWeather()
+                            favWeather.city = modelData?.city?.name ?? ""
+
+                            $favWeathers.append(favWeather)
+                            isSaved = true
                         }
                     }
                 }
-                    label: {
-                        HStack {
-                            Text("Fav List")
-                            if isSaved {
-                                Image(systemName: "heart.fill")
-                            }
-                            else{
-                                Image(systemName: "heart")
-                            }
-                                
+                label: {
+                    HStack {
+                        if isCityInFavWeather(cityName: modelData?.city?.name){
+                            Image(systemName: "heart.fill")
+                                .foregroundColor(.red)
+                        }
+                        else if isSaved  {
+                            Image(systemName: "heart.fill")
+                                .foregroundColor(.red)
+                        }
+                        
+                        else {
+                            Image(systemName: "heart")
+                                .foregroundColor(.red)
                         }
                     }
-
+                }
+                
+                }
             }
         }
-        
+    
+    func isCityInFavWeather(cityName: String?) -> Bool {
+    
+        return favWeathers.contains { fav in
+            return fav.city == cityName
+        }
     }
 }
 
@@ -86,16 +107,17 @@ struct WeatherHeader: View {
     var body: some View {
         VStack(alignment: .center) {
             Text(model.city?.name ?? "")
-                .font(.system(size: 34))
-                .fontWeight(.bold)
+                .font(.system(size: 30))
+                .fontWeight(.semibold)
             
-            Text("\(model.list?.first?.main?.temp ?? "0")\(selectedUnits == .metric ? "°C" : "°F")")
+            Text("\(model.list?.first?.main?.temp ?? "0")°")
+                .font(.system(size: 102))
             
-            Text(model.list?.first?.weather?.first?.description ?? "")
+            Text(model.list?.first?.weather?.first?.main ?? "")
+                .font(.title3)
             
-            Text("H: \(Int(Double(model.list?.first?.main?.temp_max ?? "0") ?? 0))\(selectedUnits == .metric ? "°C" : "°F") - L: \(Int(Double(model.list?.first?.main?.temp_min ?? "0") ?? 0))\(selectedUnits == .metric ? "°C" : "°F")")
+            Text("H: \(Int(Double(model.list?.first?.main?.temp_max ?? "0") ?? 0))\(selectedUnits == .metric ? "°C" : "°F")   L: \(Int(Double(model.list?.first?.main?.temp_min ?? "0") ?? 0))\(selectedUnits == .metric ? "°C" : "°F")")
                 .font(.footnote)
-                .font(.headline)
         }
         
     }
@@ -121,6 +143,9 @@ struct DailyForecast: View {
                 VStack{
                     ForEach(model.dailyWeather, id: \.date) { dailyData in
                         DailyWeatherView(dailymodel: dailyData , selectedUnits: selectedUnits)
+                        Divider()
+                            .background(Color.primary)
+                            .padding([.leading, .trailing], 10)
                     }
                 }
                 .padding(.horizontal)
@@ -152,8 +177,7 @@ struct DailyWeatherView: View {
             
             Text("\(dailymodel.minTemperature )\(selectedUnits == .metric ? "°C" : "°F" ) - \(dailymodel.maxTemperature  )\(selectedUnits == .metric ? "°C" : "°F")" )
         }
-        Divider()
-        
+                
         
     }
 }
@@ -165,6 +189,13 @@ struct HourlyForecast: View {
     var body: some View {
         VStack(alignment: .leading, spacing: nil) {
             
+//            Text(model.list?.first?.weather?.first?.description ?? "")
+//                .font(.headline)
+//                .padding([.top, .leading])
+//            Divider()
+//                .background(Color.primary)
+//                .padding([.leading, .trailing], 10)
+           
             Label("48-HOUR FORECAST", systemImage: "clock")
                 .font(.system(.subheadline, design: .rounded))
                 .foregroundStyle(.secondary)
@@ -216,3 +247,8 @@ struct HourlyWeatherView: View {
 #Preview {
     WeatherView( selectedUnits: Units.metric )
 }
+
+
+
+
+

@@ -6,3 +6,15 @@
 //
 
 import Foundation
+import RealmSwift
+
+class FavWeather: Object , Identifiable {
+    
+    @Persisted var id : ObjectId
+    @Persisted(primaryKey: true) var city : String
+
+    override class func primaryKey() -> String? {
+        "city"
+    }
+    
+}

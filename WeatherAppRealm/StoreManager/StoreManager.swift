@@ -25,30 +25,28 @@ class StoreManager : ObservableObject{
     
     internal init() {}
     
-    func getWeather()  -> WeatherModel? {
+    func getWeather(success: @escaping (WeatherModel) -> Void, failure: @escaping (Error) -> Void) {
         switch configManager.config {
         case .remote:
-                self.isFetchingWeather = true
-                let params: Parameters = [
-                    "q":  self.cityName,
-                    "appid": Constants.shared.API_Key,
-                    "units": self.selectedUnit.rawValue
-                ]
-                
-                RemoteStore.shared.getWeatherByCityName(params:params){ response in
-                    self.weatherData = response
-                    self.isFetchingWeather = false
-                    self.lastCity = self.cityName
-                    
-                    
-                } failure: { error in
-                    print(error)
-                }
-                return weatherData
-                
+            self.isFetchingWeather = true
+            
+            let params: Parameters = [
+                "q":  self.cityName,
+                "appid": Constants.shared.API_Key,
+                "units": self.selectedUnit.rawValue
+            ] as [String: Any]
+            
+            RemoteStore.shared.getWeatherByCityName(params: params, success: { response in
+                self.weatherData = response
+                self.isFetchingWeather = false
+                self.lastCity = self.cityName
+                success(response)
+            }, failure: { error in
+                failure(error)
+            })
+            
         case .local:
-                weatherData =  LocalStore.shared.getWeatherData()
-                return  weatherData
+            weatherData = LocalStore.shared.getWeatherData()
         }
     }
 }

@@ -1,12 +1,12 @@
 {
   "pins" : [
     {
-      "identity" : "reachability.swift",
+      "identity" : "realm-cocoa",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ashleymills/Reachability.swift",
+      "location" : "https://github.com/realm/realm-cocoa.git",
       "state" : {
         "branch" : "master",
-        "revision" : "a81b7367f2c46875f29577e03a60c39cdfad0c8d"
+        "revision" : "becc93324f6a6a5ccc7a2ea3f3f40f94fa57ce49"
       }
     },
     {
@@ -16,33 +16,6 @@
       "state" : {
         "revision" : "f8604b9fd3d2982008a1d3f5ff35e52ee9098d5b",
         "version" : "13.23.0"
-      }
-    },
-    {
-      "identity" : "realm-swift",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/realm/realm-swift",
-      "state" : {
-        "branch" : "master",
-        "revision" : "becc93324f6a6a5ccc7a2ea3f3f40f94fa57ce49"
-      }
-    },
-    {
-      "identity" : "swifterswift",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/SwifterSwift/SwifterSwift",
-      "state" : {
-        "revision" : "933f27d8e7fa0bf8200a5d6235e0de383b801126",
-        "version" : "5.3.0"
-      }
-    },
-    {
-      "identity" : "swiftlocation",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/malcommac/SwiftLocation",
-      "state" : {
-        "revision" : "f8ec8e97095eb3a5312370ad94b921768217625f",
-        "version" : "5.1.0"
       }
     }
   ],

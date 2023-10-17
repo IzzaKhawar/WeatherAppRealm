@@ -12,7 +12,7 @@ import UIKit
 
 class DataManager: NSObject {
     static let sharedInstance = DataManager()
-    @Published var favs: [FavWeather] = []
+//    @Published var favs: [FavWeather] = []
 
     
     lazy var persistentContainer: NSPersistentContainer = {
@@ -49,17 +49,17 @@ class DataManager: NSObject {
             return nil
         }
     }
-    private func loadWeathers() {
-        let context = persistentContainer.viewContext
-
-        let fetchRequest = NSFetchRequest<FavWeather>(entityName: "FavWeather")
-        
-        do {
-            self.favs = try context.fetch(fetchRequest)
-        } catch let error as NSError {
-            debugPrint("Error fetching data: \(error.localizedDescription)")
-        }
-    }
+//    private func loadWeathers() {
+//        let context = persistentContainer.viewContext
+//
+//        let fetchRequest = NSFetchRequest<FavWeather>(entityName: "FavWeather")
+//        
+//        do {
+//            self.favs = try context.fetch(fetchRequest)
+//        } catch let error as NSError {
+//            debugPrint("Error fetching data: \(error.localizedDescription)")
+//        }
+//    }
     
 //    func deleteDataModelFromCoreData(name: String) -> Bool {
 //        let context = persistentContainer.viewContext
@@ -214,60 +214,60 @@ class DataManager: NSObject {
 //        return WeatherData
 //    }
     
-    func fetchFavWeather() -> [FavWeather] {
-        let context = persistentContainer.viewContext
-        var favCity = [FavWeather]()
-        do {
-            favCity =
-            try context.fetch(FavWeather.fetchRequest())
-        } catch {
-            print("couldn't fetch")
-        }
-        return favCity
-    }
+//    func fetchFavWeather() -> [FavWeather] {
+//        let context = persistentContainer.viewContext
+//        var favCity = [FavWeather]()
+//        do {
+//            favCity =
+//            try context.fetch(FavWeather.fetchRequest())
+//        } catch {
+//            print("couldn't fetch")
+//        }
+//        return favCity
+//    }
+//    
     
     
-    
-    func saveFavWeather(_ city: String) -> Bool {
-        guard let managedContext = getContext() else { return false }
-        
-        let favWeather = FavWeather(context: managedContext)
-        favWeather.city = city
-        
-        do {
-            print("Saving session...")
-            try managedContext.save()
-            return true
-        } catch let error as NSError {
-            print("Failed to save session data! \(error): \(error.userInfo)")
-            return false
-        }
-    }
+//    func saveFavWeather(_ city: String) -> Bool {
+//        guard let managedContext = getContext() else { return false }
+//        
+//        let favWeather = FavWeather(context: managedContext)
+//        favWeather.city = city
+//        
+//        do {
+//            print("Saving session...")
+//            try managedContext.save()
+//            return true
+//        } catch let error as NSError {
+//            print("Failed to save session data! \(error): \(error.userInfo)")
+//            return false
+//        }
+//    }
 
-    func deleteFavWeather(name: String) -> Bool {
-        let context = persistentContainer.viewContext
-        var favCity = [FavWeather]()
-        
-        // Fetch the data that matches the city name
-        let fetchRequest: NSFetchRequest<FavWeather> = FavWeather.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "city == %@", name)
-        
-        do {
-            favCity = try context.fetch(fetchRequest)
-            
-            // Delete the matching data
-            for favWeather in favCity {
-                context.delete(favWeather)
-            }
-            
-            // Save the context to persist the changes
-            try context.save()
-            return true
-        } catch {
-            print("Couldn't delete data for city \(name)")
-            return false
-        }
-    }
+//    func deleteFavWeather(name: String) -> Bool {
+//        let context = persistentContainer.viewContext
+//        var favCity = [FavWeather]()
+//        
+//        // Fetch the data that matches the city name
+//        let fetchRequest: NSFetchRequest<FavWeather> = FavWeather.fetchRequest()
+//        fetchRequest.predicate = NSPredicate(format: "city == %@", name)
+//        
+//        do {
+//            favCity = try context.fetch(fetchRequest)
+//            
+//            // Delete the matching data
+//            for favWeather in favCity {
+//                context.delete(favWeather)
+//            }
+//            
+//            // Save the context to persist the changes
+//            try context.save()
+//            return true
+//        } catch {
+//            print("Couldn't delete data for city \(name)")
+//            return false
+//        }
+//    }
 
    
     
