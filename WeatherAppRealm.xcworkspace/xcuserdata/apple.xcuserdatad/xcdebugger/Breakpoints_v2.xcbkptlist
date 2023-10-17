@@ -14,8 +14,8 @@
             filePath = "WeatherAppRealm/HomeWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "252"
-            endingLineNumber = "252"
+            startingLineNumber = "257"
+            endingLineNumber = "257"
             landmarkName = "WeatherCard"
             landmarkType = "14">
             <Locations>
@@ -152,8 +152,8 @@
             filePath = "WeatherAppRealm/HomeWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "237"
-            endingLineNumber = "237"
+            startingLineNumber = "242"
+            endingLineNumber = "242"
             landmarkName = "getData()"
             landmarkType = "7">
             <Locations>
@@ -278,8 +278,8 @@
             filePath = "WeatherAppRealm/HomeWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>
@@ -341,8 +341,8 @@
             filePath = "WeatherAppRealm/HomeWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "229"
-            endingLineNumber = "229"
+            startingLineNumber = "234"
+            endingLineNumber = "234"
             landmarkName = "getData()"
             landmarkType = "7">
             <Locations>
@@ -404,8 +404,8 @@
             filePath = "WeatherAppRealm/HomeWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "232"
-            endingLineNumber = "232"
+            startingLineNumber = "237"
+            endingLineNumber = "237"
             landmarkName = "getData()"
             landmarkType = "7">
             <Locations>
@@ -452,8 +452,8 @@
             filePath = "WeatherAppRealm/HomeWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "231"
-            endingLineNumber = "231"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
             landmarkName = "getData()"
             landmarkType = "7">
             <Locations>
@@ -500,8 +500,8 @@
             filePath = "WeatherAppRealm/HomeWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "230"
-            endingLineNumber = "230"
+            startingLineNumber = "235"
+            endingLineNumber = "235"
             landmarkName = "getData()"
             landmarkType = "7">
             <Locations>
@@ -548,8 +548,8 @@
             filePath = "WeatherAppRealm/HomeWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "233"
-            endingLineNumber = "233"
+            startingLineNumber = "238"
+            endingLineNumber = "238"
             landmarkName = "getData()"
             landmarkType = "7">
             <Locations>
@@ -596,8 +596,8 @@
             filePath = "WeatherAppRealm/HomeWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "240"
-            endingLineNumber = "240"
+            startingLineNumber = "245"
+            endingLineNumber = "245"
             landmarkName = "getData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -612,8 +612,8 @@
             filePath = "WeatherAppRealm/HomeWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "234"
-            endingLineNumber = "234"
+            startingLineNumber = "239"
+            endingLineNumber = "239"
             landmarkName = "getData()"
             landmarkType = "7">
             <Locations>
@@ -660,8 +660,8 @@
             filePath = "WeatherAppRealm/HomeWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "236"
-            endingLineNumber = "236"
+            startingLineNumber = "241"
+            endingLineNumber = "241"
             landmarkName = "getData()"
             landmarkType = "7">
             <Locations>
@@ -708,8 +708,8 @@
             filePath = "WeatherAppRealm/HomeWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "238"
-            endingLineNumber = "238"
+            startingLineNumber = "243"
+            endingLineNumber = "243"
             landmarkName = "getData()"
             landmarkType = "7">
             <Locations>
@@ -756,8 +756,8 @@
             filePath = "WeatherAppRealm/HomeWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "239"
-            endingLineNumber = "239"
+            startingLineNumber = "244"
+            endingLineNumber = "244"
             landmarkName = "getData()"
             landmarkType = "7">
             <Locations>
@@ -804,8 +804,8 @@
             filePath = "WeatherAppRealm/HomeWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "240"
-            endingLineNumber = "240"
+            startingLineNumber = "245"
+            endingLineNumber = "245"
             landmarkName = "getData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -820,8 +820,8 @@
             filePath = "WeatherAppRealm/HomeWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "241"
-            endingLineNumber = "241"
+            startingLineNumber = "246"
+            endingLineNumber = "246"
             landmarkName = "getData()"
             landmarkType = "7">
             <Locations>
@@ -868,8 +868,8 @@
             filePath = "WeatherAppRealm/HomeWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "242"
-            endingLineNumber = "242"
+            startingLineNumber = "247"
+            endingLineNumber = "247"
             landmarkName = "getData()"
             landmarkType = "7">
             <Locations>
@@ -916,8 +916,8 @@
             filePath = "WeatherAppRealm/HomeWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "243"
-            endingLineNumber = "243"
+            startingLineNumber = "248"
+            endingLineNumber = "248"
             landmarkName = "getData()"
             landmarkType = "7">
             <Locations>
@@ -964,8 +964,8 @@
             filePath = "WeatherAppRealm/HomeWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "244"
-            endingLineNumber = "244"
+            startingLineNumber = "249"
+            endingLineNumber = "249"
             landmarkName = "getData()"
             landmarkType = "7">
             <Locations>
@@ -1012,10 +1012,10 @@
             filePath = "WeatherAppRealm/HomeWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "245"
-            endingLineNumber = "245"
-            landmarkName = "ContentView"
-            landmarkType = "14">
+            startingLineNumber = "250"
+            endingLineNumber = "250"
+            landmarkName = "getData()"
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "718A08B9-ED10-4C54-9453-53A56046B9A1 - d9c0d93843d990ec"
@@ -1060,8 +1060,8 @@
             filePath = "WeatherAppRealm/HomeWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "246"
-            endingLineNumber = "246"
+            startingLineNumber = "251"
+            endingLineNumber = "251"
             landmarkName = "ContentView"
             landmarkType = "14">
          </BreakpointContent>
@@ -1076,8 +1076,8 @@
             filePath = "WeatherAppRealm/HomeWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "297"
-            endingLineNumber = "297"
+            startingLineNumber = "302"
+            endingLineNumber = "302"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -1092,8 +1092,8 @@
             filePath = "WeatherAppRealm/HomeWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -1367,8 +1367,8 @@
             filePath = "WeatherAppRealm/HomeWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>

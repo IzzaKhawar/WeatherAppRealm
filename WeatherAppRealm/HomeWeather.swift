@@ -85,7 +85,7 @@ struct ContentView: View {
                                     Spacer()
                                 }
                                
-                                
+                                .cornerRadius(26)
                                 
                             }
                             
@@ -111,6 +111,7 @@ struct ContentView: View {
                                 
                             }
                             
+
                             .listRowBackground(
                                 LinearGradient(
                                     gradient: Gradient(
@@ -120,9 +121,13 @@ struct ContentView: View {
                                     endPoint: .bottom
                                 )
                             )
+                          
+                            
                         }
                         .scrollContentBackground(.hidden)
-                        .listRowSpacing(4.0)
+                        .listRowSpacing(8.0)
+                        .cornerRadius(40)
+                        
                         
                     }
                     if store.isFetchingWeather {
@@ -297,6 +302,7 @@ struct WeatherCard: View {
                
             }
             .padding()
+            
         }
         
         
